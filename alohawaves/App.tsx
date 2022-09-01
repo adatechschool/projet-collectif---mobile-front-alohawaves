@@ -21,7 +21,11 @@ export default function App() {
 
           <Text style={styles.locationstyle}>Hossegor, France</Text>
 
-          <Text style={styles.difficultystyle}>Saison/difficulté</Text>
+          <View style={styles.detailstyle}>
+            <Text style={styles.seasonstyle}>Haute Saison</Text>
+            <Image source={require('./src/assets/wave.png')} style={styles.difficultystyle}/>
+            <Text style={styles.beachstyle}> </Text>
+          </View>
        
           <Text style={styles.descriptionstyle}>Aut exercitationem obcaecati vel tempore galisum eum aperiam fugiat a repellendus explicabo et adipisci tempore quo architecto accusamus? Et sapiente consequuntur sed consequatur vitae vel ipsum blanditiis est expedita reprehenderit non porro doloremque assumenda eveniet.</Text>
 
@@ -57,8 +61,20 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     color: '#535254',
   },
-  difficultystyle: {
+  detailstyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     paddingBottom: 10,
+  },
+  seasonstyle: {
+
+  },
+  difficultystyle: {
+    height: 25,
+    width: 25,
+  },
+  beachstyle: {
+
   },
   descriptionstyle: {
     lineHeight: 23,
