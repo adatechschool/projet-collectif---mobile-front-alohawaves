@@ -23,7 +23,7 @@ const DATA = [
   },
 ];
 
-const Item = ({title, location, image}) => (
+const Item = ({title, location, image}: {title: string; location: string; image: string}) => (
   <View style={styles.descriptionbox}>
         <Text style={styles.titlestyle}>{title}</Text>
 
@@ -47,7 +47,7 @@ const Item = ({title, location, image}) => (
 
 export default function App() {
 
-  const renderItem = ({item}) => (<Item title = {item.title} location = {item.location} image = {item.image}/>);
+  const renderItem = ({item}: {item: any}) => (<Item title = {item.title} location = {item.location} image = {item.image}/>);
 
   return (
     <View style={styles.container}>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   imagebox: {
     width: "100%",
-    height: "30%",
+    height: "70%",
   },
   imagestyle: {
     height: "100%",
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
   descriptionbox: {
     flex: 2,
     width: "100%",
+    height: 300, 
     backgroundColor: "#fcfcfa",
   },
   titlestyle: {
