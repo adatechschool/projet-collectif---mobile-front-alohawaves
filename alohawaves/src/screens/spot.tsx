@@ -1,6 +1,24 @@
 // Porte d'entrée de l'App
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+
+// Ajouts Marine
+const SpotScreen = (props) => {
+  const goTo = () => {
+    console.log("props", props);
+  };
+  return(
+    <View>
+      <Text>Welcome to the Spot</Text>
+      <TouchableOpacity onPress={goTo}>
+        <View style={styles.button}>
+          <Text>Log-in</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  )
+}
+// Fin ajout Marine
 
 export default function App() {
   return (
@@ -79,5 +97,15 @@ const styles = StyleSheet.create({
   descriptionstyle: {
     lineHeight: 23,
     color: '#535254',
+  },
+  // Ajout Marine
+  button: {
+    backgroundColor: "lightBlue",
+    borderColor: "darkblue",
+    borderwidth: 2,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 100,
+    height: 40,
   }
 });
