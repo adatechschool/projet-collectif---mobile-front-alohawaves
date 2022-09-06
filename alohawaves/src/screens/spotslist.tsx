@@ -37,7 +37,7 @@ const Item = ({title, location, image}: {title: string; location: string; image:
             style={styles.imagestyle}
           >
             <Image
-              source={require("./src/assets/wavey.png")}
+              source={require("../assets/wavey.png")}
               style={styles.difficultystyle}
             />
           </ImageBackground>
@@ -48,7 +48,7 @@ const Item = ({title, location, image}: {title: string; location: string; image:
 export default function App() {
     const renderItem = ({item}: {item: any}) => (<Item title = {item.title} location = {item.location} image = {item.image}/>);
 
-    const SpotListScreen = ({props}:{props:any}) => {
+    const SpotsListScreen = ({props}:{props:any}) => {
         const goTo = () => {
             props.navigation.push('SpotScreen');
         };

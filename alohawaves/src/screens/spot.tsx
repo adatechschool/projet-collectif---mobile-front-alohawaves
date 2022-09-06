@@ -56,7 +56,7 @@ export default function App() {
 
           <View style={styles.detailstyle}>
             <Text style={styles.seasonstyle}>Haute Saison</Text>
-            <Image source={require('./src/assets/wave.png')} style={styles.difficultystyle}/>
+            <Image source={require('../assets/wavey.png')} style={styles.difficultystyle}/>
             <Text style={styles.beachstyle}> </Text>
           </View>
        
