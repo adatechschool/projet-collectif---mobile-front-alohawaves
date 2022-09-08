@@ -1,6 +1,7 @@
 // Porte d'entrée de l'App
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList } from "react-native";
+import { RootTabScreenProps } from '../../types';
 
 const DATA = [
   {
@@ -45,7 +46,7 @@ const Item = ({title, location, image}: {title: string; location: string; image:
       </View>
 )
 
-export default function App() {
+export default function App({navigation}:{navigation: any}) {
     const renderItem = ({item}: {item: any}) => (<Item title = {item.title} location = {item.location} image = {item.image}/>);
 
     const SpotsListScreen = ({props}:{props:any}) => {
@@ -72,9 +73,9 @@ export default function App() {
         <Text>Welcome Alohawaves !</Text>
   </View> */}
 
-      <View>
+      {/* <View>
         <Text style={styles.titlelist}>SPOTS</Text>
-      </View>
+      </View> */}
       <FlatList
       data={DATA}
       renderItem={renderItem}
