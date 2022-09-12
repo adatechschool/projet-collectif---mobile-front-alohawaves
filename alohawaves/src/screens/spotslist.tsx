@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList } from "react-native";
+import key from '../../apiKey'; 
 
 // const DATA = {
 // 	"records": [{
@@ -49,7 +50,7 @@ export default function App({navigation}:{navigation: any}) {
     (<Item 
       destination = {item.fields.Destination} 
       address = {item.fields.Address} 
-      photos = {item.fields.Photos.thumbnails.large}
+      photos = {item.fields.Photos[0].thumbnails.large}
       //fields = {item.records.fields}
 
       />);
@@ -72,10 +73,10 @@ export default function App({navigation}:{navigation: any}) {
 
       const getSpotsSurf = async () => {
         try {
-        const response = await fetch('https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=key2MVJwjMTLEkWA4');
+        const response = await fetch(`https://api.airtable.com/v0/appxT9ln6ixuCb3o1/Surf%20Destinations?api_key=${key}`);
           const data = await response.json()
-          setData(data)
-          console.log(data.records[0].fields['Photos'].thumbnails.large)
+          setData(data.records)
+          console.log(data)
         } catch(error) {
           console.error(error)
         } finally { 
@@ -94,7 +95,7 @@ export default function App({navigation}:{navigation: any}) {
       <FlatList
         data={data}
         renderItem={renderItem}
-        keyExtractor={id => id}/>
+        keyExtractor={item => item.id}/>
     </View>
   );
 }
