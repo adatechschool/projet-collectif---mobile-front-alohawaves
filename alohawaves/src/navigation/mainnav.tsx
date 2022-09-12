@@ -39,7 +39,7 @@ function BottomTabNavigator() {
         <BottomTab.Screen name='SpotsListScreen' component={SpotsListScreen}
           options={({navigation}) => ({
             title: 'Spot List',
-            tabBarIcon: ({ color }) => <TabBarIcon name="list-ul" color={color} />,
+            tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
             headerRight: () => (
               <Pressable
                 onPress={() => navigation.navigate('Modal')}
@@ -53,7 +53,7 @@ function BottomTabNavigator() {
         <BottomTab.Screen name="SpotFormScreen" component={SpotFormScreen}
           options={{
             title: 'Add a new spot',
-            tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} />,
+            tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           }}
         />
       </BottomTab.Navigator>
