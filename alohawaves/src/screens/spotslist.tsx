@@ -56,7 +56,7 @@ export default function App({navigation}:{navigation: any}) {
     (<Item 
       destination = {item.fields.Destination} 
       address = {item.fields.Address} 
-      photos = {item.fields.Photos[0].thumbnails.large}
+      photos = {item.fields.Photos[0].thumbnails.large.url}
       //fields = {item.records.fields}
 
       />);
