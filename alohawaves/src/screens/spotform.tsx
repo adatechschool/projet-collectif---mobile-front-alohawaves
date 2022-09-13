@@ -1,10 +1,45 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList, TextInput } from "react-native";
 
-export default function SpotFormScreen() {
+
+const UselessTextInput = () => {
+    //const [text, onChangeText] = React.useState("");
+    //const [number, onChangeNumber] = React.useState(null);
+
+
     return (
         <View>
-            <Text>Page de formulaire pour de nouveaux spots</Text>
+            <Text>Name</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Spot name"
+            />
+
+            <Text>Location</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Location"
+            />
+
+            <Text>Photo (url)</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Photo"
+            />
+
+
         </View>
-    )
-}
+    );
+};
+
+const styles = StyleSheet.create({
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 0.5,
+        padding: 10,
+    },
+});
+
+export default UselessTextInput;

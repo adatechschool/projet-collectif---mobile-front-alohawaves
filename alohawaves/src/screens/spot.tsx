@@ -20,7 +20,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 // };
 // Fin ajout Marine
 
-export default function App() {
+export default function SpotsScreen({route}: any) {
   const SpotScreen = ({props}:{props:any}) => {
     const goTo = () => {
       console.log("props", props);
@@ -46,17 +46,18 @@ export default function App() {
       <View style={styles.imagebox}>
         <Image style={styles.imagestyle}
           source={{
-            uri:'https://sportihome.com/uploads/spots/59a70f35b27eb115986b6247/large/1504121018914.jpg'}}/>
+            uri:route.params.propToPass.photo}}/>
       </View>
 
       <View style={styles.descriptionbox}>
-          <Text style={styles.titlestyle}>Plage d'Hossegor</Text>
+          <Text style={styles.titlestyle}>{route.params.propToPass.destination}</Text>
+          {/*<Text>{route.params.propToPass.itemId}</Text>*/}
 
-          <Text style={styles.locationstyle}>Hossegor, France</Text>
+          <Text style={styles.locationstyle}>{route.params.propToPass.address}</Text>
 
           <View style={styles.detailstyle}>
             <Text style={styles.seasonstyle}>Haute Saison</Text>
-            <Image source={require('../assets/wavey.png')} style={styles.difficultystyle}/>
+            <Image source={require('../assets/wave.png')} style={styles.difficultystyle}/>
             <Text style={styles.beachstyle}> </Text>
           </View>
        

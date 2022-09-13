@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList } from "react-native";
 import key from '../../apiKey'; 
+import BottomTabNavigator from '../navigation/mainnav';
+
+
 /*
 const DATA = [
   {
@@ -25,13 +28,15 @@ const DATA = [
   },
 ];
 */
-const Item = ({destination, address, photos}: {destination: string; address: string; photos: string}) => (
+
+const Item = ({destination, address, photos, navigation, propToPass}: {destination: string; address: string; photos: string; navigation: any; propToPass:any}) => (
   <View style={styles.descriptionbox}>
         <Text style={styles.titlestyle}>{destination}</Text>
 
         <Text style={styles.locationstyle}>{address}</Text>
 
         <View style={styles.imagebox}>
+        <TouchableOpacity onPress={() => navigation.navigate('Welcome', {propToPass})}>
           <ImageBackground
             source={{
               uri: photos,
@@ -43,6 +48,7 @@ const Item = ({destination, address, photos}: {destination: string; address: str
               style={styles.difficultystyle}
             />
           </ImageBackground>
+          </TouchableOpacity>
         </View>
       </View>
 )
@@ -57,6 +63,13 @@ export default function App({navigation}:{navigation: any}) {
       destination = {item.fields.Destination} 
       address = {item.fields.Address} 
       photos = {item.fields.Photos[0].thumbnails.large.url}
+      navigation={navigation}
+      propToPass = {{
+        itemId : item.id, 
+        destination: item.fields.Destination,
+        address: item.fields.Address,
+        photo: item.fields.Photos[0].thumbnails.large.url
+      } }
       //fields = {item.records.fields}
 
       />);
@@ -107,10 +120,12 @@ export default function App({navigation}:{navigation: any}) {
       {/* <View>
         <Text style={styles.titlelist}>SPOTS</Text>
       </View> */}
-      <FlatList
+
+        <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id}/>
+      
     </View>
   );
 }
