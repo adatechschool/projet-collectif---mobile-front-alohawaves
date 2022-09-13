@@ -6,29 +6,6 @@ import key from '../../apiKey';
 import BottomTabNavigator from '../navigation/mainnav';
 
 
-/*
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: "Plage d'Hossegor",
-    location: "Hossegor, France",
-    image: "https://sportihome.com/uploads/spots/59a70f35b27eb115986b6247/large/1504121018914.jpg"
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: "Ouistreham",
-    location:"Basse-Normandie, France",
-    image: "https://sportihome.com/uploads/spots/59a70f35b27eb115986b6247/large/1504121018914.jpg"
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: "Deauville",
-    location:"Basse-Normandie, France",
-    image: "https://sportihome.com/uploads/spots/59a70f35b27eb115986b6247/large/1504121018914.jpg"
-  },
-];
-*/
-
 const Item = ({destination, address, photos, navigation, propToPass}: {destination: string; address: string; photos: string; navigation: any; propToPass:any}) => (
   <View style={styles.descriptionbox}>
         <Text style={styles.titlestyle}>{destination}</Text>
@@ -54,9 +31,8 @@ const Item = ({destination, address, photos, navigation, propToPass}: {destinati
 )
 
 export default function App({navigation}:{navigation: any}) {
-    //const renderItem = ({item}: {item: any}) => (<Item title = {item.title} location = {item.location} image = {item.image}/>);
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState<any[]>([]);
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState<any[]>([]);
 
   const renderItem = ({item}: {item: any}) => 
     (<Item 
@@ -77,7 +53,7 @@ export default function App({navigation}:{navigation: any}) {
   const SpotsListScreen = ({props}:{props:any}) => {
       const goTo = () => {
           props.navigation.push('SpotScreen');
-    const SpotsListScreen = ({props}:{props:any}) => {
+      const SpotsListScreen = ({props}:{props:any}) => {
         const goTo = () => {
             props.navigation.push('SpotScreen');
         };

@@ -1,45 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, FlatList, TextInput } from "react-native";
-
-
-const UselessTextInput = () => {
-    //const [text, onChangeText] = React.useState("");
-    //const [number, onChangeNumber] = React.useState(null);
-
-
+import { SafeAreaView, StyleSheet, Text, View, Image, TextInput, Button, Alert} from "react-native";
+    
+export default function SpotFormScreen() {
     return (
-        <View>
-            <Text>Name</Text>
+        <SafeAreaView>
+            <StatusBar style="auto" />
             <TextInput
                 style={styles.input}
                 placeholder="Spot name"
+                keyboardType='default'
             />
-
-            <Text>Location</Text>
             <TextInput
                 style={styles.input}
-                placeholder="Location"
+                placeholder="Spot place"
+                keyboardType='default'
             />
-
-            <Text>Photo (url)</Text>
             <TextInput
                 style={styles.input}
-                placeholder="Photo"
+                placeholder="Difficulty level (1 to 5)"
+                keyboardType='numeric'
             />
-
-
-        </View>
-    );
-};
-
+            <View style={styles.fixToText}>
+                <Button
+                    title = "Submit"
+                    color= "#b0cff7"
+                    onPress={()=>Alert.alert('Do you want to add this new post ?')}
+                />
+            </View>
+        </SafeAreaView>
+    )
+}
+    
 const styles = StyleSheet.create({
     input: {
         height: 40,
         margin: 12,
         borderWidth: 0.5,
         padding: 10,
-    },
+        },
+    title: {
+        textAlign: 'center',
+        },
+    fixToText: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        }
 });
-
-export default UselessTextInput;

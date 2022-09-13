@@ -2,23 +2,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-// Ajouts Marine
-// const SpotScreen = (props) => {
-//   const goTo = () => {
-//     console.log("props", props);
-//   };
-//   return(
-//     <View>
-//       <Text>Welcome to the Spot</Text>
-//       <TouchableOpacity onPress={goTo}>
-//         <View style={styles.button}>
-//           <Text>Log-in</Text>
-//         </View>
-//       </TouchableOpacity>
-//     </View>
-//   )
-// };
-// Fin ajout Marine
 
 export default function SpotsScreen({route}: any) {
   const SpotScreen = ({props}:{props:any}) => {
@@ -39,9 +22,6 @@ export default function SpotsScreen({route}: any) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      {/* <View>
-        <Text>Welcome Alohawaves !</Text>
-  </View> */}
 
       <View style={styles.imagebox}>
         <Image style={styles.imagestyle}

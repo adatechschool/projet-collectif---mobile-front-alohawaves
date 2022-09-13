@@ -14,26 +14,9 @@ import SpotScreen from '../screens/spot';
 import SpotFormScreen from '../screens/spotform';
 
 import MainStackNavigator from './appstack';
-
-// ce code rentre en conflit avec la tab navigation et faisait qu'elle ne s'affichait pas 
+ 
 const Tab = createBottomTabNavigator();
 
-/*
-const Stack = createStackNavigator();
-
-const MainStackNavigator = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Spots" component={SpotsListScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Welcome" component={SpotScreen} />
-        <Stack.Screen name='Form' component={SpotFormScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-*/
 
 function BottomTabNavigator() {
   return (
@@ -44,14 +27,6 @@ function BottomTabNavigator() {
           options={({ navigation }) => ({
             title: 'Spots',
             tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
-            /*headerRight: () => (
-              <Pressable
-                onPress={() => navigation.navigate('Modal')}
-                style={({ pressed }) => ({
-                  opacity: pressed ? 0.5 : 1,
-                })}>
-              </Pressable>
-            ),*/
           })}
         />
         <Tab.Screen name="Form" component={SpotFormScreen}
